@@ -15,6 +15,4 @@ function genProgression() {
   return progressionGame;
 }
 
-export {
-  genProgression,
-};
+export default genProgression;

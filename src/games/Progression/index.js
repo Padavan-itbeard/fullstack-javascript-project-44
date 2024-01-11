@@ -1,4 +1,4 @@
-import { genProgression } from './utils.js';
+import genProgression from './utils.js';
 import * as utils from '../../utils.js';
 import { MAX_ROUND } from '../../consts.js';
 
