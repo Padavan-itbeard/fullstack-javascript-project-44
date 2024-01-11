@@ -5,6 +5,9 @@
 
 ## Game brain-event
 [![asciicast](https://asciinema.org/a/9I9Em3o5OEqL1SYNa7Uw4zHmV.svg)](https://asciinema.org/a/9I9Em3o5OEqL1SYNa7Uw4zHmV)
+
+## Game brain-calc
+[![asciicast](https://asciinema.org/a/ahB8OWZG8Y6rK1foWsFIsps2c.svg)](https://asciinema.org/a/ahB8OWZG8Y6rK1foWsFIsps2c)
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Padavan-itbeard/fullstack-javascript-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Padavan-itbeard/fullstack-javascript-project-44/actions)
 
