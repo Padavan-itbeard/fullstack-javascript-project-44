@@ -1,11 +1,9 @@
-import { MAX_RND_RANGE, MAX_ROUND } from '../../consts.js';
+import { MAX_ROUND, MAX_RND_RANGE } from '../../consts.js';
 import * as utils from '../../utils.js';
-import { calc, exprToStr, getRndOperatorByOperators } from './utils.js';
+import NOD from './utils.js';
 
-const OPERATORS = ['+', '-', '*'];
-
-function calcGame(name) {
-  console.log('What is the result of the expression?');
+function gcdGame(name) {
+  console.log('Find the greatest common divisor of given numbers.');
 
   let round = 1;
   let win = true;
@@ -13,14 +11,12 @@ function calcGame(name) {
   do {
     const num1 = utils.getRndInteger(MAX_RND_RANGE);
     const num2 = utils.getRndInteger(MAX_RND_RANGE);
-    const operator = getRndOperatorByOperators(OPERATORS);
-    const exprStr = exprToStr([num1, num2], operator);
 
-    utils.askQuestion(exprStr);
+    utils.askQuestion(`${num1} ${num2}`);
 
     const answerStr = utils.getAnswer();
     const answerNumb = parseInt(answerStr, 10);
-    const res = calc(exprStr);
+    const res = NOD(num1, num2);
     const isCorrect = res === answerNumb;
 
     if (!Number.isNaN(answerNumb) && isCorrect) {
@@ -35,4 +31,4 @@ function calcGame(name) {
   return win;
 }
 
-export default calcGame;
+export default gcdGame;

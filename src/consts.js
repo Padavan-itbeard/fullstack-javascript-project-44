@@ -1,3 +1,4 @@
-const MAX_ROUND = 3;
+export const MAX_ROUND = 3;
 
-export default MAX_ROUND;
+/** RND < MAX_RND_RANGE */
+export const MAX_RND_RANGE = 101;
