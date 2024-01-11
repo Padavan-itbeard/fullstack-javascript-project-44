@@ -10,6 +10,8 @@
 [![asciicast](https://asciinema.org/a/ahB8OWZG8Y6rK1foWsFIsps2c.svg)](https://asciinema.org/a/ahB8OWZG8Y6rK1foWsFIsps2c)
 ## Game brain-gcd
 [![asciicast](https://asciinema.org/a/z1uqehpsOqhC1I2Wz1aqo1b6g.svg)](https://asciinema.org/a/z1uqehpsOqhC1I2Wz1aqo1b6g)
+## Game brain-progression
+[![asciicast](https://asciinema.org/a/KjaeawqMYvj7Lum79N7hJOlOX.svg)](https://asciinema.org/a/KjaeawqMYvj7Lum79N7hJOlOX)
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Padavan-itbeard/fullstack-javascript-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Padavan-itbeard/fullstack-javascript-project-44/actions)
 
