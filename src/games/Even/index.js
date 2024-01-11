@@ -1,4 +1,4 @@
-import MAX_ROUND, { ANSWER } from '../../consts.js';
+import { ANSWER, MAX_ROUND } from '../../consts.js';
 import {
   askQuestion,
   getAnswer,
