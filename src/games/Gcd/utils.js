@@ -1,5 +1,6 @@
-function NOD(...args) {
-  let [x, y] = args;
+function NOD(num1, num2) {
+  let x = num1;
+  let y = num2;
 
   while (x && y) {
     if (x > y) {
