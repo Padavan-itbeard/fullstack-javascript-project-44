@@ -34,6 +34,19 @@ function youWrong(name, answer, res) {
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${res}'.\nLet's try again, ${name}!`);
 }
 
+function check(condition, name, answerUser, rightAnswer) {
+  let win = true;
+
+  if (condition) {
+    youWinRound();
+  } else {
+    win = false;
+    youWrong(name, answerUser, rightAnswer);
+  }
+
+  return win;
+}
+
 export {
   getUserName,
   getAnswer,
@@ -42,4 +55,5 @@ export {
   youWin,
   getRndInteger,
   youWrong,
+  check,
 };

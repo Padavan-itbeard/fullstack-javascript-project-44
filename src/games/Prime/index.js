@@ -23,12 +23,7 @@ function primeGame(name) {
     const idx = isPrime ? 0 : 1;
     const isCorrect = answer === ANSWER[idx];
 
-    if (isCorrect) {
-      utils.youWinRound();
-    } else {
-      win = false;
-      utils.youWrong(name, answer, ANSWER[idx]);
-    }
+    win = utils.check(isCorrect, name, answer, ANSWER[idx]);
     round += 1;
   } while (win && round <= MAX_ROUND);
 

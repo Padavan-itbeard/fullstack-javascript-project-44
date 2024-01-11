@@ -1,11 +1,5 @@
 import { ANSWER, MAX_ROUND } from '../../consts.js';
-import {
-  askQuestion,
-  getAnswer,
-  getRndInteger,
-  youWinRound,
-  youWrong,
-} from '../../utils.js';
+import * as utils from '../../utils.js';
 
 /** RND < MAX_RND_RANGE */
 const MAX_RND_RANGE = 101;
@@ -17,19 +11,15 @@ function evenGame(name) {
   let win = true;
 
   do {
-    const num = getRndInteger(MAX_RND_RANGE);
+    const num = utils.getRndInteger(MAX_RND_RANGE);
 
-    askQuestion(num);
+    utils.askQuestion(num);
 
-    const answer = getAnswer();
+    const answer = utils.getAnswer();
     const idx = num % 2;
+    const isCorrect = ANSWER[idx] === answer;
 
-    if (ANSWER[idx] === answer) {
-      youWinRound();
-    } else {
-      win = false;
-      youWrong(name, answer, ANSWER[idx]);
-    }
+    win = utils.check(isCorrect, name, answer, ANSWER[idx]);
     round += 1;
   } while (win && round <= MAX_ROUND);
 

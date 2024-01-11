@@ -18,14 +18,10 @@ function progressionGame(name) {
 
     const answerStr = utils.getAnswer();
     const answerNumb = parseInt(answerStr, 10);
-    const isCorrect = res === answerNumb;
+    const isNumberAnswer = !Number.isNaN(answerNumb);
+    const isCorrect = isNumberAnswer && res === answerNumb;
 
-    if (!Number.isNaN(answerNumb) && isCorrect) {
-      utils.youWinRound();
-    } else {
-      win = false;
-      utils.youWrong(name, answerStr, res);
-    }
+    win = utils.check(isCorrect, name, answerStr, res);
     round += 1;
   } while (win && round <= MAX_ROUND);
 
