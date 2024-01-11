@@ -12,6 +12,8 @@
 [![asciicast](https://asciinema.org/a/z1uqehpsOqhC1I2Wz1aqo1b6g.svg)](https://asciinema.org/a/z1uqehpsOqhC1I2Wz1aqo1b6g)
 ## Game brain-progression
 [![asciicast](https://asciinema.org/a/KjaeawqMYvj7Lum79N7hJOlOX.svg)](https://asciinema.org/a/KjaeawqMYvj7Lum79N7hJOlOX)
+## Game brain-prime
+[![asciicast](https://asciinema.org/a/3e2erhL6WmqH3zxl2gRdpEW2J.svg)](https://asciinema.org/a/3e2erhL6WmqH3zxl2gRdpEW2J)
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Padavan-itbeard/fullstack-javascript-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Padavan-itbeard/fullstack-javascript-project-44/actions)
 
