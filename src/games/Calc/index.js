@@ -1,27 +1,12 @@
-import {
-  getUserName,
-  getRndInteger,
-  askQuestion,
-  getAnswer,
-  getRndOperatorByOperators,
-  exprToStr,
-  calc,
-  youWinRound,
-  youWrong,
-  youWin,
-} from './utils.js';
+import MAX_ROUND from '../../consts.js';
+import { askQuestion, getAnswer, getRndInteger, youWinRound, youWrong } from '../../utils.js';
+import { calc, exprToStr, getRndOperatorByOperators } from './utils.js';
 
-const MAX_ROUND = 3;
 /** RND < MAX_RND_RANGE */
 const MAX_RND_RANGE = 101;
 const OPERATORS = ['+', '-', '*'];
 
-function calcGame() {
-  console.log('Welcome to the Brain Games!');
-
-  const name = getUserName();
-
-  console.log(`Hello, ${name}!`);
+function calcGame(name) {
   console.log('What is the result of the expression?');
 
   let round = 1;
@@ -49,9 +34,7 @@ function calcGame() {
     round += 1;
   } while (win && round <= MAX_ROUND);
 
-  if (win) {
-    youWin(name);
-  }
+  return win;
 }
 
 export default calcGame;
