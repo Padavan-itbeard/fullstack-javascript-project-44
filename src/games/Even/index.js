@@ -1,4 +1,4 @@
-import MAX_ROUND from '../../consts.js';
+import MAX_ROUND, { ANSWER } from '../../consts.js';
 import {
   askQuestion,
   getAnswer,
@@ -9,7 +9,6 @@ import {
 
 /** RND < MAX_RND_RANGE */
 const MAX_RND_RANGE = 101;
-const ANSWER = ['yes', 'no'];
 
 function evenGame(name) {
   console.log(`Answer "${ANSWER[0]}" if the number is even, otherwise answer "${ANSWER[1]}".`);
