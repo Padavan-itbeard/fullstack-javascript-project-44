@@ -2,10 +2,6 @@
   "name": "@hexlet/code",
   "version": "2.5.0",
   "description": "[![Actions Status](https://github.com/Padavan-itbeard/fullstack-javascript-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Padavan-itbeard/fullstack-javascript-project-44/actions)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Padavan-itbeard/fullstack-javascript-project-44.git"
