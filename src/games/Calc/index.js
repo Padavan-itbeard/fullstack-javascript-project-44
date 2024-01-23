@@ -1,34 +1,20 @@
-import { MAX_RND_RANGE, MAX_ROUND } from '../../consts.js';
-import * as utils from '../../utils.js';
-import { calc, exprToStr, getRndOperatorByOperators } from './utils.js';
+import getRandomInRange from '../../utils.js';
 
 const OPERATORS = ['+', '-', '*'];
 
-function calcGame(name) {
-  console.log('What is the result of the expression?');
-
-  let round = 1;
-  let win = true;
-
-  do {
-    const num1 = utils.getRndInteger(MAX_RND_RANGE);
-    const num2 = utils.getRndInteger(MAX_RND_RANGE);
-    const operator = getRndOperatorByOperators(OPERATORS);
-    const exprStr = exprToStr([num1, num2], operator);
-
-    utils.askQuestion(exprStr);
-
-    const answerStr = utils.getAnswer();
-    const answerNumb = parseInt(answerStr, 10);
-    const res = calc(exprStr);
-    const isNumberAnswer = !Number.isNaN(answerNumb);
-    const isCorrect = isNumberAnswer && res === answerNumb;
-
-    win = utils.check(isCorrect, name, answerStr, res);
-    round += 1;
-  } while (win && round <= MAX_ROUND);
-
-  return win;
+function calculateExpr(expr) {
+  // eslint-disable-next-line no-new-func
+  return new Function(`return ${expr}`)();
 }
 
-export default calcGame;
+function generateRound() {
+  const num1 = getRandomInRange();
+  const num2 = getRandomInRange();
+  const operator = OPERATORS[getRandomInRange(0, OPERATORS.length - 1)];
+  const question = `${num1} ${operator} ${num2}`;
+  const answer = calculateExpr(question).toString();
+
+  return [question, answer];
+}
+
+export default generateRound;

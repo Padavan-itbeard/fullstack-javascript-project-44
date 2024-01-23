@@ -1,31 +1,29 @@
-import genProgression from './utils.js';
-import * as utils from '../../utils.js';
-import { MAX_ROUND } from '../../consts.js';
+import getRandomInRange from '../../utils.js';
 
-function progressionGame(name) {
-  console.log('What number is missing in the progression?');
+function genProgression() {
+  const start = getRandomInRange();
+  const delta = getRandomInRange();
+  const progressionGame = [start];
 
-  let round = 1;
-  let win = true;
+  for (let i = 1; i < 10; i += 1) {
+    const next = progressionGame[i - 1] + delta;
 
-  do {
-    const progression = genProgression();
-    const idx = utils.getRndInteger(progression.length);
-    const res = progression[idx];
+    progressionGame.push(next);
+  }
 
-    progression[idx] = '..';
-    utils.askQuestion(progression.join(' '));
-
-    const answerStr = utils.getAnswer();
-    const answerNumb = parseInt(answerStr, 10);
-    const isNumberAnswer = !Number.isNaN(answerNumb);
-    const isCorrect = isNumberAnswer && res === answerNumb;
-
-    win = utils.check(isCorrect, name, answerStr, res);
-    round += 1;
-  } while (win && round <= MAX_ROUND);
-
-  return win;
+  return progressionGame;
 }
 
-export default progressionGame;
+function generateRound() {
+  const progression = genProgression();
+  const idx = getRandomInRange(0, progression.length - 1);
+  const answer = progression[idx].toString();
+
+  progression[idx] = '..';
+
+  const question = progression.join(' ');
+
+  return [question, answer];
+}
+
+export default generateRound;

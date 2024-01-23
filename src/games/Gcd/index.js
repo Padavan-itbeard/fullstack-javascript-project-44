@@ -1,30 +1,28 @@
-import { MAX_ROUND, MAX_RND_RANGE } from '../../consts.js';
-import * as utils from '../../utils.js';
-import NOD from './utils.js';
+import getRandomInRange from '../../utils.js';
 
-function gcdGame(name) {
-  console.log('Find the greatest common divisor of given numbers.');
+function NOD(num1, num2) {
+  let x = num1;
+  let y = num2;
 
-  let round = 1;
-  let win = true;
+  while (x && y) {
+    if (x > y) {
+      x %= y;
+    } else {
+      y %= x;
+    }
+  }
+  x += y;
 
-  do {
-    const num1 = utils.getRndInteger(MAX_RND_RANGE);
-    const num2 = utils.getRndInteger(MAX_RND_RANGE);
-
-    utils.askQuestion(`${num1} ${num2}`);
-
-    const answerStr = utils.getAnswer();
-    const answerNumb = parseInt(answerStr, 10);
-    const res = NOD(num1, num2);
-    const isNumberAnswer = !Number.isNaN(answerNumb);
-    const isCorrect = isNumberAnswer && res === answerNumb;
-
-    win = utils.check(isCorrect, name, answerStr, res);
-    round += 1;
-  } while (win && round <= MAX_ROUND);
-
-  return win;
+  return x;
 }
 
-export default gcdGame;
+function generateRound() {
+  const num1 = getRandomInRange();
+  const num2 = getRandomInRange();
+  const question = `${num1} ${num2}`;
+  const answer = NOD(num1, num2).toString();
+
+  return [question, answer];
+}
+
+export default generateRound;

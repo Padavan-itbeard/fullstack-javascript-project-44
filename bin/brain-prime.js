@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import app from '../src/index.js';
-import prime from '../src/games/Prime/index.js';
+import runEngine from '../src/index.js';
+import generateRound from '../src/games/Prime/index.js';
 
-app(prime);
+runEngine('Answer "yes" if given number is prime. Otherwise answer "no".', generateRound);
