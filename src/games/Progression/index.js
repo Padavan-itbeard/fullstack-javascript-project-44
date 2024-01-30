@@ -1,4 +1,5 @@
 import getRandomInRange from '../../utils.js';
+import engine from '../../index.js';
 
 function genProgression() {
   const start = getRandomInRange();
@@ -26,4 +27,4 @@ function generateRound() {
   return [question, answer];
 }
 
-export default generateRound;
+export default () => engine('What number is missing in the progression?', generateRound);

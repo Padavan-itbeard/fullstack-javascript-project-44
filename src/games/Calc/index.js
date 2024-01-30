@@ -1,4 +1,5 @@
 import getRandomInRange from '../../utils.js';
+import engine from '../../index.js';
 
 const OPERATORS = ['+', '-', '*'];
 
@@ -17,4 +18,4 @@ function generateRound() {
   return [question, answer];
 }
 
-export default generateRound;
+export default () => engine('What is the result of the expression?', generateRound);

@@ -1,4 +1,5 @@
 import getRandomInRange from '../../utils.js';
+import engine from '../../index.js';
 
 function generateRound() {
   const num = getRandomInRange();
@@ -9,4 +10,4 @@ function generateRound() {
   return [question, answer];
 }
 
-export default generateRound;
+export default () => engine('Answer "yes" if the number is even, otherwise answer "no".', generateRound);

@@ -1,4 +1,5 @@
 import getRandomInRange from '../../utils.js';
+import engine from '../../index.js';
 
 const PRIMES = [
   2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
@@ -16,4 +17,4 @@ function generateRound() {
   return [question, answer];
 }
 
-export default generateRound;
+export default () => engine('Answer "yes" if given number is prime. Otherwise answer "no".', generateRound);

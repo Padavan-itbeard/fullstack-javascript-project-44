@@ -1,4 +1,5 @@
 import getRandomInRange from '../../utils.js';
+import engine from '../../index.js';
 
 function NOD(num1, num2) {
   let x = num1;
@@ -24,5 +25,4 @@ function generateRound() {
 
   return [question, answer];
 }
-
-export default generateRound;
+export default () => engine('Find the greatest common divisor of given numbers.', generateRound);
