@@ -4,15 +4,12 @@ import readlineSync from 'readline-sync';
 const MAX_ROUND = 3;
 
 function runEngine(msgRule, generateRound) {
-  let countRound = 1;
-  let win = true;
-
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ') || 'Noname';
   console.log(`Hello, ${name}!`);
   console.log(msgRule);
 
-  do {
+  for (let i = 0; i < MAX_ROUND; i += 1) {
     const [question, answer] = generateRound();
     console.log(`Question: ${question}`);
     const answerUser = readlineSync.question('Your answer: ').toLowerCase();
@@ -20,15 +17,12 @@ function runEngine(msgRule, generateRound) {
     if (answer === answerUser) {
       console.log('Correct!');
     } else {
-      win = false;
       console.log(`'${answerUser}' is wrong answer ;(. Correct answer was '${answer}'.\nLet's try again, ${name}!`);
+      return;
     }
-    countRound += 1;
-  } while (win && countRound <= MAX_ROUND);
-
-  if (win) {
-    console.log(`Congratulations, ${name}!`);
   }
+
+  console.log(`Congratulations, ${name}!`);
 }
 
 export default runEngine;
