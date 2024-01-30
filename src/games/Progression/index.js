@@ -1,22 +1,22 @@
 import getRandomInRange from '../../utils.js';
 import engine from '../../index.js';
 
-function genProgression() {
-  const start = getRandomInRange();
-  const delta = getRandomInRange();
-  const progressionGame = [start];
+const PROGRESSION_LENGTH = 10;
 
-  for (let i = 1; i < 10; i += 1) {
-    const next = progressionGame[i - 1] + delta;
+const generateProgression = (start, step, length) => {
+  const progression = []
 
-    progressionGame.push(next);
+  for (let i = 0; i < length; i++) {
+    progression.push(start + step * i);
   }
 
-  return progressionGame;
+  return progression
 }
 
 function generateRound() {
-  const progression = genProgression();
+  const start = getRandomInRange();
+  const step = getRandomInRange();
+  const progression = generateProgression(start, step, PROGRESSION_LENGTH);
   const idx = getRandomInRange(0, progression.length - 1);
   const answer = progression[idx].toString();
 
