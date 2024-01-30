@@ -4,14 +4,14 @@ import engine from '../../index.js';
 const PROGRESSION_LENGTH = 10;
 
 const generateProgression = (start, step, length) => {
-  const progression = []
+  const progression = [];
 
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < length; i += 1) {
     progression.push(start + step * i);
   }
 
-  return progression
-}
+  return progression;
+};
 
 function generateRound() {
   const start = getRandomInRange();
